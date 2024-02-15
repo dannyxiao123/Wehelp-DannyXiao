@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>WeHelp Bootcamp申請</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<style>
+    /* 
+
+白天模式:
+背景色:#F4F0F0
+字體色:#494545
+
+黑夜模式:
+背景色:#494545
+字體色:#F4F0F0
+
+
+
+
+*/
+
+
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;900&family=Noto+Serif+TC:wght@300&display=swap');
+
+
+    input#check-mode {
+        display: none;
+    }
+
+
+    body {
+        font-family: 'Noto Sans TC', sans-serif;
+        font-family: 'Noto Serif TC', serif;
+        font-weight: 400;
+        max-width: 1000px;
+        margin: auto;
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+        transition-duration: 0.7s;
+        z-index: 10;
+        /* user-select:none */
+    }
+
+    .emphasize {
+        font-weight: bold;
+        color: red;
+        letter-spacing: 2px;
+        z-index: 1000;
+    }
+
+    .body-day {
+        background-color: #F4F0F0;
+        color: #494545;
+    }
+
+    .body-night {
+        background-color: #494545;
+        color: #F4F0F0;
+    }
+
+    .body-night .content {
+        font-weight: 400;
+    }
+
+    .body-night .emphasize {
+        font-weight: normal;
+    }
+
+    h1 {
+        font-size: 64px !important;
+        text-align: center;
+        margin-top: 80px;
+        letter-spacing: 6px;
+    }
+
+
+    .title {
+        font-weight: 800;
+        text-align: center;
+        font-size: 48px;
+        margin: 80px 20px;
+        line-height: 2em;
+        letter-spacing: 4.5px;
+    }
+
+    .content {
+        font-size: 22px;
+        letter-spacing: 4.8px;
+        line-height: 45px;
+        font-weight: 800;
+        /* text-indent: 2em; */
+    }
+
+    #hard {
+        position: relative;
+    }
+
+    #hard #book01text {
+        color: red;
+        text-decoration-line: underline;
+        font-weight: bold;
+    }
+
+    #hard #book01 {
+        position: absolute;
+        transition-duration: 0.5s;
+    }
+
+
+    #hard .book01A {
+        opacity: 1;
+        right: -100px;
+        height: 450px;
+        top: 200px;
+    }
+
+    #hard .book01B {
+        opacity: 0;
+        right: 0px;
+        height: 0px
+    }
+
+    #lasttext {
+        text-align: center;
+        padding-bottom: 120px;
+        font-size: 48px;
+    }
+
+
+    /* music button */
+
+    .musicPlayer {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .musicPlayer #playButton {
+        margin: auto;
+        font-size: 24px;
+        margin-bottom: 50px;
+        width: 140px;
+        background-color: #1A5F9E;
+        color: #C7C8CA;
+        font-weight: bold;
+        transform: scale(1);
+        transition-duration: 0.3s;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .musicPlayer #playButton:active {
+        transform: scale(.95);
+    }
+</style>
+
+<label><input type="checkbox" id="check-mode" />
+
+
+    <body class="body-day">
+        <header id="home-title">
+            <h1>蕭昕瑜-WeHelp報名資料</h1>
+        </header>
+        <main>
+            <section id="myInfo">
+                <h2 class="title">個人簡介</h2>
+                <p class="content">
+                    彭彭老師和助教團隊您們好，我是蕭昕瑜，於前年畢業於機械領域。<br /><br />
+
+                    我一直以來沒有特別嚮往的工作，總認為好好讀完大學找個相關領域的工作就好。直到大四同學們都在找工作時我開始猶豫人生是否會就這樣定型，所以決定先念研究所。此時我在暑假找了一個實習想試試看不同的領域，當時有用Google
+                    App
+                    Script寫了一個<span class="emphasize">智慧產品選型表單</span>(可以在Google表單輸入所需的產品規格，再從Google
+                    Sheet中跳出符合的產品)雖然沒學過JavaScript，但當時邊學邊實作過程還蠻開心的。然而我發現Google表單不管是下拉式選單還是樣式等等沒辦法隨意調整或動態更新而遇到了一些困難，無法順利做出自己想要的東西，我就在想如果可以有一個能夠隨心所欲任我控制的網頁介面就好了，進而也對網頁設計產生了興趣。<br /><br />
+
+                    雖然因實習產生了對網頁架設的興趣，不過畢業後我還是照原定計畫念研究所。在研究所念了一陣子後發覺業界和自己所想差異蠻大的，加深了離開機械領域的想法，經過與家人及師長討論決定休學，嘗試其他更多可能性，而我第一個想到的就是當初想過很多次卻猶豫不決的軟體工程師。<br /><br />
+
+                    目前我在某家建設公司做行政助理，工作之餘會學習網頁設計相關技能，也有嘗試過使用WordPress架設公司的自訂形象網站，因此也對”專案”有初步的認識，像是模板、config檔、路由等等，讓我在日後不管是看彭彭老師的python
+                    flask或是自己現在正在學的react.js可以比較快的理解某些功能是為了完成什麼事情。雖然學習過程中很痛苦不管是剛接觸CSS或JS也都是，但是多虧我是用WordPress先走完一次流程，讓我在學習的時候總會有「原來當初碰到的某個功能可能也是這樣的實作出來的」的想法，進而對自己的成長有所成就，提高對學習的興趣。<br /><br />
+
+                    <a href="https://longpon.com/" target="_blank">
+                        <div class="emphasize">WordPress自訂網站</div>
+                    </a>
+
+                </p>
+            </section>
+            <section id="hard">
+                <img id="book01" class="book01B" src="./assets/pic/book01.jpg" />
+                <h2 class="title">為了成為軟體工程師，做過什麼努力？</h2>
+                <p class="content">
+                    我從去年6月決定休學後開始準備。我買了洪錦魁老師的書<span
+                        class="emphasize">最完整跨平台網頁</span>，天真的認為翻完這一本我就能全部理解，最後只理解什麼叫做「懂得愈多，不懂得愈多」。html和css學完了，不過我還是不知道怎麼架站…<br /><br />
+
+                    為了能夠架站，我又開始探索的旅程，網域、伺服器、CMS，查了許久後，決定使用AWS
+                    Lightsail和Wordpress架站，由於我希望能夠不使用套版而是自己設計一個自訂的Wordpress網站，所以又去學習Wordpress要如何去做設定等等。最後成功架設了自訂形象網站。<br /><br />
+
+                    最近我正在學習react.js，但是學到life
+                    cycle的時候我發現自己對js不夠理解。所以開始加強js的基礎，不管是closure、promise、fetch還是this的用法對新手真的非常不友善，但我相信用時間和努力堆疊遲早都能夠克服。
+                </p>
+            </section>
+            <section id="howTime">
+                <h2 class="title">如果參與這個計畫，會怎麼安排學習時間？</h2>
+                <p class="content">
+                    我會辭去目前的工作，專心投入轉職訓練。雖然目前還不確定能否通過審核，但我已經確定會在訓練開始前兩周離職，提早進入全心投入訓練的狀態，不管是否錄取我都決定用接下來半年的時間為轉職作準備。
+                </p>
+            </section>
+            <section id="goWhere">
+                <h2 class="title">是否有想要加入的軟體公司？為什麼想加入該公司？</h2>
+                <p class="content">
+                    希望可以找到全遠端工作，但是我目前找到大部分有這種機會的看起來都是接案公司。我聽說接案公司對技能的成長幫助有限，所以還是希望了解更多再作決定。
+                    最終目標希望可以找到海外的遠端工作，不過在那之前除了精進技能外也得先加強外語能力…。
+                </p>
+            </section>
+            <section id="resolveEmo">
+                <h2 class="title">請描述一件產生明顯負面情緒的經歷，如何處理該情緒？</h2>
+                <p class="content">
+                    休學後因某些原因所以暫時寄住在台中的叔叔家。我叔叔脾氣非常差，思想也非常傳統，常常亂發脾氣，所以我常常和他溝通想讓他改善臭脾氣，陸續溝通了兩個月現在叔叔也改善了非常多。
+                    真的心很累(快得憂鬱症了)，第一次遇到這麼難溝通的人，在這件事上我處理自己情緒的方式應該是堅持把事情做好(雖然主要都是在處理別人的情緒)。
+                </p>
+            </section>
+            <section id="shareThisWeb">
+                <h2 class="title">關於這份申請網頁，分享一個開發時的技術心得。</h2>
+                <p class="content">
+                    因為先前已經練習過一點前端，所以製作這份網頁時沒遇到什麼瓶頸。不過在剛開始練習用HTML、CSS實作的時候，影片一看再看還是無法像教學那樣流暢的移動元件，甚至連指令都要用一個查一個，可以說是所以處在低谷。不過我覺得學程式就像是把一個個死結解開，靠著大量的思考和實作，等到邏輯通了自然能夠融會貫通，隨之而來則是滿滿的成就感。
+            </section>
+            <section id="firstTime">
+                <h2 class="title">從上次提出申請至今，多做了哪些努力？<br />( 第一次申請不用回答 )</h2>
+                <p class="content" style="text-align: center;">
+                    第一次申請
+                </p>
+            </section>
+            <section id="wantToSay">
+                <h2 class="title">其他想要對Wehelp說的事情？</h2>
+                <p class="content">
+                    在過去半年我一點點的加強自己，有過覺得前方道路模糊的時候，有過想偷懶的時候，尤其是最近學習React感覺有一道道厚牆在前方，常常會學到失去動力。我希望可以加入wehelp，除了能夠和大家一起學習、有更加清晰的視野，也希望藉由階段性的任務刺激自己的好勝心，進一步加速成長。
+                    <br /><br />
+                <div class="content" id="lasttext">最後，謝謝老師和助教團隊花時間閱讀 😊</div>
+                </p>
+            </section>
+
+        </main>
+
+        <footer>
+            <script>
+                $(document).ready(function () {
+                    $("body").click(function () {
+                        if ($("#check-mode").prop("checked")) {
+                            console.log("body-night");
+                            $("body").addClass("body-night")
+                            $("body").removeClass("body-day")
+                        } else {
+                            console.log("body-day");
+                            $("body").addClass("body-day")
+                            $("body").removeClass("body-night")
+                        }
+                    });
+                });
+            </script>
+        </footer>
+
+    </body>
+</label>
+
+</html>
